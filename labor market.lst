@@ -1,0 +1,164 @@
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/05/16 09:52:04 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  *----------------------------------------------*
+   2  *larbor market
+   3  *12ÔÂ11ÈÕ£¬¶ÁÈ¡Êý¾ÝµÄ²¿·Ö¼ÓÈë»ù´¡¹¤×Ê¡¢»ù´¡Ê§ÒµÂÊ£¬·ÖÀàµÄÀÍ¶¯Á¦Í¶ÈëÓÉ±ÈÀý¸
+      ÄÎªÊýÖµ
+   4  *12ÔÂ16ÈÕ£¬³õÊ¼ÀÍ¶¯Á¦¹©¸øÁ¿°üÀ¨¾ÍÒµÁ¿+Ê§ÒµÁ¿    ×¢ÒâÀÍ¶¯¹©¸øÁ¿ºÍ¾ÍÒµÁ¿Ö®¼ä
+      µÄ×ª»¯
+   5  *12ÔÂ28ÈÕ£¬ÀÍ¶¯Á¦½á¹¹2016Äê¿ªÊ¼±ä»¯
+   6  *20161204, update: extend the types of labor to 28 by gender by region by 
+      education
+   7  *----------------------------------------------*
+   8   
+   9  set lm labor type /L1*L28/
+  10      region /urban,rural/
+  11      gender /male,female/
+  12      education /     ul unlettered
+  13                      es "elementart school"
+  14                      ms "middle school"
+  15                      hs "high school"
+  16                      jc "junior college"
+  17                      rc "regular college"
+  18                      pg "postgraduate"      /
+  19      Level /low,high/;
+  20   
+  21  alias (lm,lmm)             ;
+  22   
+  24   
+  25  Parameter labor_v0(*,*)  sectoral labor costs value by labor type in 10 th
+      ousand yuan;
+  26  Parameter labor_q0(*,*)  sectoral labor quantity by labor type;
+  27  Parameter labor_w0(*,*)  sectoral labor wage value by labor type;
+  28  parameter labordata(*,*);
+  29   
+GDXIN   C:\Users\hero\Desktop\Github\test model - V17\labor.gdx
+  31   
+--- LOAD  labor_v0 = 2:labor_v0
+--- LOAD  labor_q0 = 1:labor_q0
+--- LOAD  labordata = 3:labordata
+  35   
+  36  labor_w0(i,lm)$labor_q0(i,lm) =labor_v0(i,lm)/labor_q0(i,lm);
+****           $120,340
+  37   
+  38   
+  39  *== adjust employment from 2010 to 2012
+  40   
+  41   
+  42   
+  43  *parameter tlprop(*,*)  the proportion of total labor supply by year;
+  44  parameter bwage(lm)    the average wage of labor by type from micro data i
+      n 10 thousand yuan;
+  45  parameter bur(lm)     the benchmark unemployment rate ;
+  46   
+  47   
+  48  bwage(lm) =   labordata('wage',lm);
+  49  bur(lm)  =   labordata('ul',lm);
+  50   
+  51  DISPLAY labor_v0,labor_q0,labor_w0,bur;
+  52   
+  53  *== set relative wage factor
+  54   
+  55  parameter fwage_s(i)  factor of average wage among sectors  ;
+  56  parameter awage_e(lm)  average wage among education  ;
+  57  parameter wage(i,lm);
+  58   
+  59  awage_e(lm) = sum(i,labor_w0(i,lm)*labor_q0(i,lm))/sum(i,labor_q0(i,lm));
+  60   
+  61  fwage_s(i) = fact0('labor',i)/sum(lm,labor_q0(i,lm));
+****                   $140    $116
+  62  fwage_s(i) =  fwage_s(i)*sum(lm,labor_q0(i,lm))/sum(lm,awage_e(lm)*labor_q
+      0(i,lm));
+  63   
+  64  wage(i,lm) = awage_e(lm)*fwage_s(i);
+  65   
+  66   
+  67  display fwage_s,awage_e,wage;
+  68   
+  69   
+  70   
+  71  parameter tlabor_q0(lm)   total employment by sub_labor
+  72            tqlabor0       total employment ;
+  73   
+  74  tlabor_q0(lm)=sum(i,labor_q0(i,lm));
+  75  *tlabor0(lm)=fact("labor")*tlprop("2010",lm);
+  76  *labor0(i,lm)=tlabor0(lm)*lprop(i,lm)     ;
+  77  tqlabor0=sum(lm,tlabor_q0(lm));
+  78  display labor_q0,tlabor_q0,tqlabor0;
+  79   
+  80   
+  81  parameter laborelec0,laborist0;
+  82  laborelec0(sub_elec,lm)=labor_q0("Elec",lm)*lelec0(sub_elec)/fact0("labor"
+****                    $120,340                       $140
+      ,"Elec");
+  83  laborist0(sub_ist,lm)=list0(sub_ist)*labor_q0("IST",lm)/sum(lmm,labor_q0("
+****                  $120,340  $140
+      IST",lmm));
+  84   
+  85  display laborelec0,laborist0;
+  86   
+  87  parameter ur0      the benchmark unemployment rate
+  88            tlabor_s0(lm)   total labor supply by sub_labor
+  89            tqlabor_s0      total labor supply;
+  90   
+  91  ur0(lm)=bur(lm);
+  92  *ur0(lm)=0;
+  93   
+  94  tlabor_s0(lm)=(tlabor_q0(lm)/(1-ur0(lm)));
+  95  tqlabor_s0=sum(lm,tlabor_s0(lm));
+  96   
+  97  *shock ÀÍ¶¯Á¦¹©¸ø½á¹¹µÄ±ä»¯
+  98  *tlabor_s0(lm)=tqlabor_s0*tlprop("2030",lm);
+  99   
+ 100  display ur0,tlabor_s0,tqlabor_s0;
+ 101   
+ 102   
+STOP C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/05/16 09:52:04 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+120  Unknown identifier entered as set
+140  Unknown symbol
+340  A label/element with the same name exist. You may have forgotten
+        to quote a label/element reference. For example,
+        set i / a,b,c /; parameter x(i); x('a') = 10;
+
+**** 10 ERROR(S)   0 WARNING(S)
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/05/16 09:52:04 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\labor market.gms
+     2       23 CALL           1      23  GDXXRW.EXE labor.xlsx par=labor_q0 rng
+                                          =A1:AC19  par=labor_v0 rng=A21:AC39 pa
+                                          r=labordata  rng=A41:AC43
+     3       30 GDXIN          1      30  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\labor.gdx
+     4      103 STOP           1     103  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\labor market.gms
+
+
+COMPILATION TIME     =        3.188 SECONDS      3 MB  24.4.6 r52609 WEX-WEI
+
+
+USER: Yaqian Mu                                      G150107:0436AO-WIN
+      Tsinghua University, Res. Centre for International EnvironmDC6727
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+Output     C:\Users\hero\Desktop\Github\test model - V17\labor market.lst
+
+**** USER ERROR(S) ENCOUNTERED

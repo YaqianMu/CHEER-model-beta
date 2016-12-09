@@ -1,0 +1,163 @@
+GAMS 24.4.3  r51699 Released Apr  2, 2015 WIN-VS8 x86 32bit/MS Windows 11/04/15 21:50:14 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1   
+   2  *----------------------------------------------*
+   3  *setup benchmark quantities
+   4  *----------------------------------------------*
+   5   
+   6   
+       
+      Co2排放量
+       
+      王灿方法        1999年数据
+      CO2排放                   Coal        Oil        NatureGas        水泥生产
+      排放因子（T/TJ)           26.35        20        15.3        14.26（t/万元
+      ）
+      转换因子（TJ/亿元）       12862.3     1700.3      8066
+      氧化率%                       90        98        99
+      固碳系数%                      1        1        1
+      生产排放系数（T/亿元）        301979.1501        32992.6212        120953.
+      945        142600
+      消费排放系数（T/亿元）        305029.4445        33325.88        122175.70
+      2
+       
+       
+      生产排放系数=排放因子*转换因子*氧化率/100*(1-固碳系数/100）
+      消费排放系数=排放因子*转换因子*氧化率/100*(1-固碳系数/100）
+       
+       
+  26  *parameters for energy and emission accounts
+  27  parameter
+  28  ecoef         energy coefficient (tce per billion yuan)   energy from quan
+      tity of value to physical
+  29  ccoef_P       carbon coefficient of production(T per Billion yuan)
+  30  ccoef_h       carbon coefficient of consumption(T per Billion yuan)
+  31  clim           carbon emission allowance
+  32  clim_s(i)
+****         $120
+  33  clim_h
+  34  ;
+  35   
+  36  ecoef('coal')             =12862.3*10;
+  37  ecoef("roil")              =1700.3*10;
+  38  ecoef("gas")              =8066*10;
+  39   
+  40  ccoef_p("coal")           =301979.1501*10;
+  41  ccoef_p("roil")            =32992.6212*10;
+  42  ccoef_p("gas")            =120953.945*10;
+  43   
+  44   
+  45  ccoef_h("coal")           =305029.4445*10;
+  46  ccoef_h("roil")            =33325.88*10;
+  47  ccoef_h("gas")            =122175.702*10;
+  48   
+  49   
+  50  parameter scoef_g(*,i)        SO2 generation million ton per billion yuan
+  51            scoef_e(*,i)        SO2 emission million ton per billion yuan
+  52            scoef_a(*,i)        SO2 abatement million ton per billion yuan
+  53            slim                        so2 emission limits million ton;
+  54   
+  55   
+  56   
+  57   
+  58  scoef_g('coal',i)         =sam('SO2_production_coal',i)/int0('coal',i);
+****                               $140                  $116    $140
+  59  scoef_g('roil',i)         =sam('SO2_production_oil',i)/int0('roil',i);
+****                                                    $116
+  60  scoef_g('gas',i)         =0;
+  61  scoef_g('process',i)         =sam('SO2_production_process',i)/output0(i);
+****                                                           $116       $140
+  62  scoef_e('coal',i)         =sam('SO2_emission_coal',i)/int0('coal',i);
+****                                                   $116
+  63  scoef_e('roil',i)         =sam('SO2_emission_oil',i)/int0('roil',i);
+****                                                  $116
+  64  scoef_e('gas',i)         =0;
+  65  scoef_e('process',i)         =sam('SO2_emission_process',i)/output0(i);
+****                                                         $116
+  66  scoef_a('coal',i)         =sam('SO2_abated_coal',i)/int0('coal',i);
+****                                                 $116
+  67  scoef_a('roil',i)         =sam('SO2_abated_oil',i)/int0('roil',i);
+****                                                $116
+  68  scoef_a('gas',i)         =0;
+  69  scoef_a('process',i)         =sam('SO2_abated_process',i)/output0(i);
+****                                                       $116
+  70  slim                     =0;
+  71  clim                   =0;
+  72  clim_s(i)                =0;
+  73  clim_h                   =0;
+  74  parameter emission0(pollutant,pitem,*,*);
+****                              $120  $120
+  75  emission0('co2','e',fe,i)=ccoef_p(fe)*int0(fe,i)/10000;
+****                       $120,340
+  76  emission0('co2','e',fe,fee)=0;
+****                           $120,340
+  77   
+  78  emission0('co2','e',fe,'household')=ccoef_h(fe)*cons0(fe)/10000;
+****                                                      $140
+  79   
+  80  emission0('so2','g',fe,i)=scoef_g(fe,i)*int0(fe,i) ;
+  81  emission0('so2','g','process',i)=scoef_g('process',i)*output0(i) ;
+  82   
+  83  emission0('so2','e',fe,i)=scoef_e(fe,i)*int0(fe,i) ;
+  84  emission0('so2','e','process',i)=scoef_e('process',i)*output0(i) ;
+  85   
+  86  emission0('so2','a',fe,i)=scoef_a(fe,i)*int0(fe,i) ;
+  87  emission0('so2','a','process',i)=scoef_a('process',i)*output0(i) ;
+  88   
+  89   
+  90   
+  91  display scoef_g,scoef_e,scoef_a,emission0;
+  92   
+  93  * emission account
+  94  parameter Temission0,Temission1,Temission2;
+  95  Temission0('co2',i)=sum(fe,emission0("co2","e",fe,i));
+  96  Temission0('co2','household')=sum(fe,emission0('co2','e',fe,'household'));
+  97   
+  98  Temission0('so2',i)=sum(fe,emission0("so2","e",fe,i))+emission0('so2','e',
+      'process',i);
+  99  display     Temission0;
+ 100   
+ 101  Temission1('co2')=sum(i,Temission0('co2',i))+Temission0('co2','household')
+      ;
+ 102  Temission1('so2')=sum(i,Temission0('so2',i));
+ 103  Temission2('co2')=sum((i,fe)$(not fe(i) and not elec(i)),emission0("co2","
+****                                                     $140
+      e",fe,i))+sum((i,fe)$(elec(i)),emission0("co2","e",fe,i))+sum(fe,emission0
+      ("co2","e",fe,"household"));
+ 104  display     Temission1,Temission2;
+ 105   
+ 106   
+GAMS 24.4.3  r51699 Released Apr  2, 2015 WIN-VS8 x86 32bit/MS Windows 11/04/15 21:50:14 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+116  Label is unknown
+120  Unknown identifier entered as set
+140  Unknown symbol
+340  A label/element with the same name exist. You may have forgotten
+        to quote a label/element reference. For example,
+        set i / a,b,c /; parameter x(i); x('a') = 10;
+
+**** 21 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.093 SECONDS      3 MB  24.4.3 r51699 WIN-VS8
+
+
+USER: Yaqian Mu                                      G150107:0436AO-WIN
+      Tsinghua University, Res. Centre for International EnvironmDC6727
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行
+           业拆分\emission data.gms
+Output     E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行
+           业拆分\emission data.lst
+
+**** USER ERROR(S) ENCOUNTERED

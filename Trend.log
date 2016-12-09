@@ -1,0 +1,45 @@
+
+--- Job Trend.gms Start 03/29/16 16:26:14 24.4.3 r51699 WIN-VS8 x86 32bit/MS Windows
+GAMS 24.4.3   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Yaqian Mu                                      G150107:0436AO-WIN
+          Tsinghua University, Res. Centre for International EnvironmDC6727
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- Trend.gms(5) 2 Mb
+--- call GDXXRW.EXE trend.xlsx par=PAT rng=A1:D10   par=RET1 rng=A14:I23   par=RET2 rng=A25:I34
+
+GDXXRW           24.4.3 r51699 Released Apr  2, 2015 VS8 x86 32bit/MS Windows 
+Input file : E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\trend.xlsx
+Output file: E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\trend.gdx
+Total time = 5172 Ms
+--- Trend.gms(10) 2 Mb
+--- GDXin=E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\trend.gdx
+--- Trend.gms(16) 3 Mb 1 Error
+*** Error 120 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    Unknown identifier entered as set
+--- Trend.gms(28) 3 Mb 3 Errors
+*** Error 120 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    Unknown identifier entered as set
+*** Error 340 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- Trend.gms(31) 3 Mb 4 Errors
+*** Error 353 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- Trend.gms(37) 3 Mb 6 Errors
+*** Error 120 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    Unknown identifier entered as set
+*** Error 340 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- Trend.gms(39) 3 Mb 7 Errors
+*** Error 353 in E:\母亚乾在清华\组内事务\自然科学基金\混合模型\test model - V10- markup\Trend.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- Trend.gms(41) 3 Mb 7 Errors
+*** Status: Compilation error(s)
+--- Job Trend.gms Stop 03/29/16 16:26:19 elapsed 0:00:05.944
+Exit code = 2

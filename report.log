@@ -1,0 +1,16 @@
+
+--- Job report.gms Start 12/06/16 16:52:28 24.4.6 r52609 WEX-WEI x86 64bit/MS Windows
+GAMS 24.4.6   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Yaqian Mu                                      G150107:0436AO-WIN
+          Tsinghua University, Res. Centre for International EnvironmDC6727
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- report.gms(48) 2 Mb 2 Errors
+*** Error 140 in C:\Users\hero\Desktop\Github\test model - V17\report.gms
+    Unknown symbol
+*** Error 140 in C:\Users\hero\Desktop\Github\test model - V17\report.gms
+    Unknown symbol
+--- report.gms(49) 2 Mb 2 Errors
+*** Status: Compilation error(s)
+--- Job report.gms Stop 12/06/16 16:52:28 elapsed 0:00:00.004
+Exit code = 2

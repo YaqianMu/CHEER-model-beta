@@ -1,0 +1,447 @@
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/01/16 14:10:27 Page 1
+a dynamic CGE model of China economy-environment-energy policy analysis based on 2012 data
+C o m p i l a t i o n
+
+
+   2   
+      China-3E
+      Author:Yaqian Mu, Tsinghua University (muyaqian00@163.com)
+      UpDate:    12-2016
+   8   
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/01/16 14:10:27 Page 2
+a dynamic CGE model of China economy-environment-energy policy analysis based on 2012 data
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\Sets.gms
+     2      109 CALL           1     109  GDXXRW.EXE data.xlsx par=sam rng=A1
+     3      114 GDXIN          1     114  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\data.gdx
+
+
+COMPILATION TIME     =        1.469 SECONDS      3 MB  24.4.6 r52609 WEX-WEI
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/01/16 14:10:27 Page 3
+a dynamic CGE model of China economy-environment-energy policy analysis based on 2012 data
+E x e c u t i o n
+
+
+----    123 PARAMETER SAM  
+
+                              Elec        Coal      Oilgas        Roil
+
+Elec                      1581.590     102.038      55.204      50.922
+Coal                       874.675     578.827       3.133      13.688
+Oilgas                      48.100       7.600      10.116    2233.783
+Roil                       191.766      16.750      38.885     271.271
+Gas                          6.297       0.340       0.141       3.327
+Agri                         0.490       1.609       0.041       0.136
+mine                         1.783       7.525     127.286       0.880
+Food                        16.047       9.014       5.191      22.183
+Paper                        3.103       0.518       0.143       0.673
+Chem                         2.690       2.554      13.881      39.990
+CM                           1.313       4.493       0.339       1.940
+IST                          0.204       6.987       1.349
+NFM                          0.245       0.536       0.008       0.085
+EII                          8.589     214.591      68.746      58.512
+OM                         396.146     188.072      77.459      48.056
+Air                          2.490       1.554       0.462       0.691
+Tran                        60.716      62.509       8.205      50.133
+Serv                       401.140     267.108      65.777     117.578
+Labor                      360.288     629.103     151.200      83.585
+capital                    690.149     391.531     372.251     110.808
+tax                    2.049897E+7 2.557394E+7 2.257874E+7 3.828985E+7
+SO2_production_coal          1.000       1.000       1.000       1.000
+SO2_production_oil           1.000       1.000       1.000       1.000
+SO2_production_process       1.000       1.000       1.000       1.000
+SO2_emission_coal            1.000       1.000       1.000       1.000
+SO2_emission_oil             1.000       1.000       1.000       1.000
+SO2_emission_process         1.000       1.000       1.000       1.000
+SO2_abated_coal              1.000       1.000       1.000       1.000
+SO2_abated_oil               1.000       1.000       1.000       1.000
+SO2_abated_process           1.000       1.000       1.000       1.000
+
+                     +         Gas        Agri        mine        Food
+
+Elec                         6.774      88.436     163.908      71.801
+Coal                        21.563       0.535      16.080      18.166
+Oilgas                     141.519                   1.782
+Roil                         3.238     144.889      97.908      13.793
+Gas                         32.610       0.078       0.029       0.313
+Agri                         0.006    1243.309       0.925    3213.230
+mine                         0.815       0.054     191.411       3.680
+Food                         1.030     957.226      10.961    2036.185
+Paper                        0.017       0.330       0.465      83.990
+Chem                         0.412     522.748      23.504       9.818
+CM                           0.006       0.605      10.630      37.000
+IST                          0.240                   4.869
+NFM                          0.058       0.007       4.554       0.056
+EII                          1.643     233.142     167.259     193.698
+OM                           3.301      82.866     165.505      93.895
+Air                          0.193       1.849       1.713       5.512
+Tran                         8.758      88.815      63.489     252.543
+Serv                        22.146     360.235     189.072     754.285
+Labor                       19.282    5299.632     328.441     641.813
+capital                     41.376     225.815     277.156     804.455
+tax                     700472.780 -2.89566E+7 1.609829E+7 6.236802E+7
+SO2_production_coal          1.000       1.000       1.000       1.000
+SO2_production_oil           1.000       1.000       1.000       1.000
+SO2_production_process       1.000       1.000       1.000       1.000
+SO2_emission_coal            1.000       1.000       1.000       1.000
+SO2_emission_oil             1.000       1.000       1.000       1.000
+SO2_emission_process         1.000       1.000       1.000       1.000
+SO2_abated_coal              1.000       1.000       1.000       1.000
+SO2_abated_oil               1.000       1.000       1.000       1.000
+SO2_abated_process           1.000       1.000       1.000       1.000
+
+                     +       Paper        Chem          CM         IST
+
+Elec                        39.681     308.163     131.909      66.190
+Coal                        24.515     172.480      99.288     187.292
+Oilgas                                 106.134       2.910       0.585
+Roil                         3.355     232.604      57.286       4.717
+Gas                          0.140      11.149       0.016       0.051
+Agri                       100.560      29.764       0.323       0.231
+mine                         0.170     117.355     145.784     341.632
+Food                         5.600      35.054       7.927       6.658
+Paper                      371.243       4.234      39.209       0.183
+Chem                        64.872     663.546      63.913       0.969
+CM                           0.371       6.094     170.942       1.621
+IST                                      0.705       2.449     188.380
+NFM                          0.513       9.516       0.965      14.802
+EII                        102.314     254.064     215.687     132.156
+OM                         116.567      83.823     118.062     215.583
+Air                          1.083       1.598       1.593       0.731
+Tran                        38.346      75.260      54.787      39.464
+Serv                       100.955     186.134     149.477      91.488
+Labor                      109.388     126.491     154.166      99.492
+capital                    113.417     300.296     177.058     161.316
+tax                    4714856.011 7717516.701 8821533.814 5039564.829
+SO2_production_coal          1.000       1.000       1.000       1.000
+SO2_production_oil           1.000       1.000       1.000       1.000
+SO2_production_process       1.000       1.000       1.000       1.000
+SO2_emission_coal            1.000       1.000       1.000       1.000
+SO2_emission_oil             1.000       1.000       1.000       1.000
+SO2_emission_process         1.000       1.000       1.000       1.000
+SO2_abated_coal              1.000       1.000       1.000       1.000
+SO2_abated_oil               1.000       1.000       1.000       1.000
+SO2_abated_process           1.000       1.000       1.000       1.000
+
+                     +         NFM         EII          OM         Air
+
+Elec                       189.844     683.369     657.680       1.670
+Coal                        36.617     736.508      68.347       0.271
+Oilgas                       1.804      40.918       5.038
+Roil                        63.543     606.352     285.292     130.190
+Gas                          0.083       7.582       6.867       0.096
+Agri                         0.133     420.043    1108.902       0.054
+mine                       495.473    1206.299     100.154
+Food                         9.619     307.217     299.044      19.595
+Paper                        0.963      84.281     421.416       0.099
+Chem                        91.702    1257.372     195.660
+CM                           1.297     353.422     997.736 1.549930E-5
+IST                          3.156    1085.679     294.073
+NFM                        466.253    1289.255    1068.903
+EII                        136.425    6529.252   11008.909       1.194
+OM                         227.561    1056.275   16587.849      76.539
+Air                          0.997      27.973     104.630      69.194
+Tran                        33.171     568.225    1177.374      14.881
+Serv                       150.080    1733.204    5108.432      74.340
+Labor                      125.598    1660.937    5704.354      53.748
+capital                    222.433    2031.482    3924.385      60.887
+tax                    8240501.091 7.636719E+7 1.600156E+8  712706.942
+SO2_production_coal          1.000       1.000       1.000       1.000
+SO2_production_oil           1.000       1.000       1.000       1.000
+SO2_production_process       1.000       1.000       1.000       1.000
+SO2_emission_coal            1.000       1.000       1.000       1.000
+SO2_emission_oil             1.000       1.000       1.000       1.000
+SO2_emission_process         1.000       1.000       1.000       1.000
+SO2_abated_coal              1.000       1.000       1.000       1.000
+SO2_abated_oil               1.000       1.000       1.000       1.000
+SO2_abated_process           1.000       1.000       1.000       1.000
+
+                     +        Tran        Serv   Household  GOVERNMENT
+
+Elec                        54.224     310.031     283.842
+Coal                         5.231      15.996      16.119
+Roil                       761.898     462.586     231.779
+Gas                         67.797      30.514     138.255
+Agri                         0.516     464.301    2077.411      61.316
+mine                         0.098       1.195
+Food                        37.903    1120.686    3826.232
+Paper                        3.117     242.481      15.895
+Chem                         0.495      25.379
+CM                           0.349      10.162      22.817
+IST                          0.406       2.402
+NFM                          0.034       6.651
+EII                         91.938    1559.741     668.214
+OM                         502.538    3357.963    2968.776
+Air                         22.191     280.438      44.630       7.771
+Tran                       491.322     663.229     570.858     186.553
+Serv                      1019.027    8879.843    9086.355    7069.890
+Labor                      941.156    9924.735
+capital                    981.619    9019.550
+tax                    5844302.658 3.014368E+8
+SO2_production_coal          1.000       1.000
+SO2_production_oil           1.000       1.000
+SO2_production_process       1.000       1.000
+SO2_emission_coal            1.000       1.000
+SO2_emission_oil             1.000       1.000
+SO2_emission_process         1.000       1.000
+SO2_abated_coal              1.000       1.000
+SO2_abated_oil               1.000       1.000
+SO2_abated_process           1.000       1.000
+
+                     +  INVESTMENT      EXPORT      IMPORT
+
+Elec                                774344.002  220799.352
+Coal                        25.500 1376242.365 1.795954E+7
+Oilgas                      33.357 1871158.191 1.426753E+8
+Roil                        48.024 1.126194E+7 2.876027E+7
+Gas                          6.308                   0.149
+Agri                       675.371 7887611.959 5.165433E+7
+mine                        -1.412 1872531.176 8.782646E+7
+Food                       183.427 2.849758E+7 3.438614E+7
+Paper                       -1.031 5894728.145 9003714.067
+Chem                        -2.167 2.686742E+7 4.443733E+7
+CM                           2.289 1.017642E+7 4322359.090
+IST                          3.120 1656782.699  665223.998
+NFM                          5.324 4749612.446 5.761056E+7
+EII                        317.147 1.679935E+8 1.193840E+8
+OM                       21006.261 8.526424E+8 5.174322E+8
+Air                          2.953 1.521897E+7 2.225477E+7
+Tran                       219.500 4.138032E+7 1.016407E+7
+Serv                      2403.840 1.888993E+8 7.271463E+7
+
+
+----    189 PARAMETER ffact0  benchmark fixed factor supply
+
+Coal   266.241,    Oilgas 189.848,    Gas     24.412,    Agri    63.228
+mine    19.401
+
+
+----    189 PARAMETER fact0  factor inputs to industry sectors
+
+               Elec        Coal      Oilgas        Roil         Gas        Agri
+
+Labor       360.288     629.103     151.200      83.585      19.282    5299.632
+capital     690.149     125.290     182.403     110.808      16.964     162.587
+
+      +        mine        Food       Paper        Chem          CM         IST
+
+Labor       328.441     641.813     109.388     126.491     154.166      99.492
+capital     257.755     804.455     113.417     300.296     177.058     161.316
+
+      +         NFM         EII          OM         Air        Tran        Serv
+
+Labor       125.598    1660.937    5704.354      53.748     941.156    9924.735
+capital     222.433    2031.482    3924.385      60.887     981.619    9019.550
+
+
+----    189 PARAMETER int0  intermediate inputs
+
+              Elec        Coal      Oilgas        Roil         Gas        Agri
+
+Elec      1581.590     102.038      55.204      50.922       6.774      88.436
+Coal       874.675     578.827       3.133      13.688      21.563       0.535
+Oilgas      48.100       7.600      10.116    2233.783     141.519
+Roil       191.766      16.750      38.885     271.271       3.238     144.889
+Gas          6.297       0.340       0.141       3.327      32.610       0.078
+Agri         0.490       1.609       0.041       0.136       0.006    1243.309
+mine         1.783       7.525     127.286       0.880       0.815       0.054
+Food        16.047       9.014       5.191      22.183       1.030     957.226
+Paper        3.103       0.518       0.143       0.673       0.017       0.330
+Chem         2.690       2.554      13.881      39.990       0.412     522.748
+CM           1.313       4.493       0.339       1.940       0.006       0.605
+IST          0.204       6.987       1.349                   0.240
+NFM          0.245       0.536       0.008       0.085       0.058       0.007
+EII          8.589     214.591      68.746      58.512       1.643     233.142
+OM         396.146     188.072      77.459      48.056       3.301      82.866
+Air          2.490       1.554       0.462       0.691       0.193       1.849
+Tran        60.716      62.509       8.205      50.133       8.758      88.815
+Serv       401.140     267.108      65.777     117.578      22.146     360.235
+
+     +        mine        Food       Paper        Chem          CM         IST
+
+Elec       163.908      71.801      39.681     308.163     131.909      66.190
+Coal        16.080      18.166      24.515     172.480      99.288     187.292
+Oilgas       1.782                             106.134       2.910       0.585
+Roil        97.908      13.793       3.355     232.604      57.286       4.717
+Gas          0.029       0.313       0.140      11.149       0.016       0.051
+Agri         0.925    3213.230     100.560      29.764       0.323       0.231
+mine       191.411       3.680       0.170     117.355     145.784     341.632
+Food        10.961    2036.185       5.600      35.054       7.927       6.658
+Paper        0.465      83.990     371.243       4.234      39.209       0.183
+Chem        23.504       9.818      64.872     663.546      63.913       0.969
+CM          10.630      37.000       0.371       6.094     170.942       1.621
+IST          4.869                               0.705       2.449     188.380
+NFM          4.554       0.056       0.513       9.516       0.965      14.802
+EII        167.259     193.698     102.314     254.064     215.687     132.156
+OM         165.505      93.895     116.567      83.823     118.062     215.583
+Air          1.713       5.512       1.083       1.598       1.593       0.731
+Tran        63.489     252.543      38.346      75.260      54.787      39.464
+Serv       189.072     754.285     100.955     186.134     149.477      91.488
+
+     +         NFM         EII          OM         Air        Tran        Serv
+
+Elec       189.844     683.369     657.680       1.670      54.224     310.031
+Coal        36.617     736.508      68.347       0.271       5.231      15.996
+Oilgas       1.804      40.918       5.038
+Roil        63.543     606.352     285.292     130.190     761.898     462.586
+Gas          0.083       7.582       6.867       0.096      67.797      30.514
+Agri         0.133     420.043    1108.902       0.054       0.516     464.301
+mine       495.473    1206.299     100.154                   0.098       1.195
+Food         9.619     307.217     299.044      19.595      37.903    1120.686
+Paper        0.963      84.281     421.416       0.099       3.117     242.481
+Chem        91.702    1257.372     195.660                   0.495      25.379
+CM           1.297     353.422     997.736 1.549930E-5       0.349      10.162
+IST          3.156    1085.679     294.073                   0.406       2.402
+NFM        466.253    1289.255    1068.903                   0.034       6.651
+EII        136.425    6529.252   11008.909       1.194      91.938    1559.741
+OM         227.561    1056.275   16587.849      76.539     502.538    3357.963
+Air          0.997      27.973     104.630      69.194      22.191     280.438
+Tran        33.171     568.225    1177.374      14.881     491.322     663.229
+Serv       150.080    1733.204    5108.432      74.340    1019.027    8879.843
+
+
+----    222 PARAMETER inv0  sectoral investment in physical capital
+
+Coal      25.500,    Oilgas    33.357,    Roil      48.024,    Gas        6.308
+Agri     675.371,    Food     183.427,    CM         2.289,    IST        3.120
+NFM        5.324,    EII      317.147,    OM     21006.261,    Air        2.953
+Tran     219.500,    Serv    2403.840
+
+
+----    222 PARAMETER xinv0  exogenous(negative) sectoral investment in physical
+                             capital
+
+mine  -1.412,    Paper -1.031,    Chem  -2.167
+
+
+----    222 PARAMETER cons0  consumption of conmmodities
+
+Elec    283.842,    Coal     16.119,    Roil    231.779,    Gas     138.255
+Agri   2138.727,    Food   3826.232,    Paper    15.895,    CM       22.817
+EII     668.214,    OM     2968.776,    Air      52.402,    Tran    757.411
+Serv  16156.245
+
+
+----    222 PARAMETER xcons0  exogenous(negative) consumption of commodities
+
+                      ( ALL       0.000 )
+
+
+----    222 PARAMETER nx0  net commodity exports
+
+                      ( ALL       0.000 )
+
+
+----    222 PARAMETER output0  sectoral gross output
+
+Elec    4847.274,    Coal    2914.831,    Oilgas  2633.645,    Roil    3666.125
+Gas      311.995,    Agri    9398.672,    mine    2740.183,    Food    8916.798
+Paper   1271.329,    Chem    2977.338,    CM      1623.426,    IST     1594.019
+NFM     2867.765,    EII    21963.221,    OM     47373.098,    Air      580.245
+Tran    4728.139,    Serv   38230.404
+
+
+----    222 PARAMETER xexp0  exogenous(negative) benchmark commodity exports
+
+                      ( ALL       0.000 )
+
+
+----    222 PARAMETER exp0  benchmark commodity exports
+
+                      ( ALL       0.000 )
+
+
+----    222 PARAMETER fact  aggregate factor supplies
+
+Labor   26413.409,    capital 19342.855
+
+
+----    227 PARAMETER tax0  net tax payments to industry sectors
+
+Elec   2.049897E+7,    Coal   2.557394E+7,    Oilgas 2.257874E+7
+Roil   3.828985E+7,    Gas     700472.780,    Agri   -2.89566E+7
+mine   1.609829E+7,    Food   6.236802E+7,    Paper  4714856.011
+Chem   7717516.701,    CM     8821533.814,    IST    5039564.829
+NFM    8240501.091,    EII    7.636719E+7,    OM     1.600156E+8
+Air     712706.942,    Tran   5844302.658,    Serv   3.014368E+8
+
+
+----    245 PARAMETER a0  
+
+Elec    4847.274,    Coal    2914.831,    Oilgas  2633.645,    Roil    3666.125
+Gas      311.995,    Agri    9398.672,    mine    2740.183,    Food    8916.798
+Paper   1271.329,    Chem    2977.338,    CM      1623.426,    IST     1594.019
+NFM     2867.765,    EII    21963.221,    OM     47373.098,    Air      580.245
+Tran    4728.139,    Serv   38230.404
+
+
+----    245 PARAMETER output0  sectoral gross output
+
+Elec    4847.274,    Coal    2914.831,    Oilgas  2633.645,    Roil    3666.125
+Gas      311.995,    Agri    9398.672,    mine    2740.183,    Food    8916.798
+Paper   1271.329,    Chem    2977.338,    CM      1623.426,    IST     1594.019
+NFM     2867.765,    EII    21963.221,    OM     47373.098,    Air      580.245
+Tran    4728.139,    Serv   38230.404
+
+
+----    245 PARAMETER imp0  benchmark commodity imports
+
+                      ( ALL       0.000 )
+
+
+----    245 PARAMETER ximp0  exogenous(negative) benchmark commodity imports
+
+                      ( ALL       0.000 )
+
+
+----    245 PARAMETER nx0  net commodity exports
+
+                      ( ALL       0.000 )
+
+
+----    245 PARAMETER inv0  sectoral investment in physical capital
+
+Coal      25.500,    Oilgas    33.357,    Roil      48.024,    Gas        6.308
+Agri     675.371,    Food     183.427,    CM         2.289,    IST        3.120
+NFM        5.324,    EII      317.147,    OM     21006.261,    Air        2.953
+Tran     219.500,    Serv    2403.840
+
+
+----    245 PARAMETER cons0  consumption of conmmodities
+
+Elec    283.842,    Coal     16.119,    Roil    231.779,    Gas     138.255
+Agri   2138.727,    Food   3826.232,    Paper    15.895,    CM       22.817
+EII     668.214,    OM     2968.776,    Air      52.402,    Tran    757.411
+Serv  16156.245
+
+
+----    245 PARAMETER xinv0  exogenous(negative) sectoral investment in physical
+                             capital
+
+mine  -1.412,    Paper -1.031,    Chem  -2.167
+
+
+----    245 PARAMETER xcons0  exogenous(negative) consumption of commodities
+
+                      ( ALL       0.000 )
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  24.4.6 r52609 WEX-WEI
+
+
+USER: Yaqian Mu                                      G150107:0436AO-WIN
+      Tsinghua University, Res. Centre for International EnvironmDC6727
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\hero\Desktop\Github\test model - V17\Sets.gms
+Output     C:\Users\hero\Desktop\Github\test model - V17\Sets.lst

@@ -1,0 +1,50 @@
+
+--- Job labor market.gms Start 12/05/16 09:52:04 24.4.6 r52609 WEX-WEI x86 64bit/MS Windows
+GAMS 24.4.6   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Yaqian Mu                                      G150107:0436AO-WIN
+          Tsinghua University, Res. Centre for International EnvironmDC6727
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- labor market.gms(23) 3 Mb
+--- call GDXXRW.EXE labor.xlsx par=labor_q0 rng=A1:AC19  par=labor_v0 rng=A21:AC39 par=labordata  rng=A41:AC43
+
+GDXXRW           24.4.6 r52609 Released Jun 26, 2015 VS8 x86 32bit/MS Windows 
+Input file : C:\Users\hero\Desktop\Github\test model - V17\labor.xlsx
+Output file: C:\Users\hero\Desktop\Github\test model - V17\labor.gdx
+Total time = 3031 Ms
+--- labor market.gms(30) 3 Mb
+--- GDXin=C:\Users\hero\Desktop\Github\test model - V17\labor.gdx
+--- labor market.gms(36) 3 Mb 2 Errors
+*** Error 120 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- labor market.gms(61) 3 Mb 4 Errors
+*** Error 140 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Unknown symbol
+*** Error 116 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Label is unknown
+--- labor market.gms(82) 3 Mb 7 Errors
+*** Error 120 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Unknown symbol
+--- labor market.gms(83) 3 Mb 10 Errors
+*** Error 120 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Users\hero\Desktop\Github\test model - V17\labor market.gms
+    Unknown symbol
+--- labor market.gms(103) 3 Mb 10 Errors
+*** Status: Compilation error(s)
+--- Job labor market.gms Stop 12/05/16 09:52:08 elapsed 0:00:03.209
+Exit code = 2

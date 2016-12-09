@@ -1,0 +1,72 @@
+
+--- Job emission data.gms Start 11/04/15 21:50:14 24.4.3 r51699 WIN-VS8 x86 32bit/MS Windows
+GAMS 24.4.3   Copyright (C) 1987-2015 GAMS Development. All rights reserved
+Licensee: Yaqian Mu                                      G150107:0436AO-WIN
+          Tsinghua University, Res. Centre for International EnvironmDC6727
+          License for teaching and research at degree granting institutions
+--- Starting compilation
+--- emission data.gms(32) 2 Mb 1 Error
+*** Error 120 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown identifier entered as set
+--- emission data.gms(58) 3 Mb 4 Errors
+*** Error 140 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown symbol
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+*** Error 140 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown symbol
+--- emission data.gms(59) 3 Mb 5 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(61) 3 Mb 7 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+*** Error 140 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown symbol
+--- emission data.gms(62) 3 Mb 8 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(63) 3 Mb 9 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(65) 3 Mb 10 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(66) 3 Mb 11 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(67) 3 Mb 12 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(69) 3 Mb 13 Errors
+*** Error 116 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Label is unknown
+--- emission data.gms(74) 3 Mb 15 Errors
+*** Error 120 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown identifier entered as set
+*** Error 120 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown identifier entered as set
+--- emission data.gms(75) 3 Mb 17 Errors
+*** Error 120 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown identifier entered as set
+*** Error 340 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- emission data.gms(76) 3 Mb 19 Errors
+*** Error 120 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown identifier entered as set
+*** Error 340 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- emission data.gms(78) 3 Mb 20 Errors
+*** Error 140 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown symbol
+--- emission data.gms(103) 3 Mb 21 Errors
+*** Error 140 in E:\母亚乾在清华\清华学术\自然科学基金\模型\代码\总量减排模型 - 电力行业拆分\emission data.gms
+    Unknown symbol
+--- emission data.gms(106) 3 Mb 21 Errors
+*** Status: Compilation error(s)
+--- Job emission data.gms Stop 11/04/15 21:50:14 elapsed 0:00:00.104
+Exit code = 2

@@ -1,0 +1,92 @@
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/06/16 16:52:28 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * --
+   2  * -- PANDA - PRC Aggregate National Development Assessment Model
+   3  * --
+   4  * --           All rights reserved
+   5  * --
+   6  * --           David Roland-Holst, Samuel G. Evans
+   7  * --           Cecilia Han Springer, and MU Yaqian
+   8  * --
+   9  * --           Berkeley Energy and Resources, BEAR LLC
+  10  * --           1442A Walnut Street, Suite 108
+  11  * --           Berkeley, CA 94705 USA
+  12  * --
+  13  * --           Email: dwrh@berkeley.edu
+  14  * --           Tel: 510-220-4567
+  15  * --           Fax: 510-524-4591
+  16  * --
+  17  * --           October, 2016
+  18   
+  19  * --
+  20   
+  21  * -- postscn.gms
+  22  * --
+  23  * -- This file produces scnulation results in Excel compatible CSV files
+  24  * -- Two files are produced for each interval, a reportfile containing des
+      ired scnulation variables,
+  25  * --      and a samfile containing complete Social Accounting Matrices
+  26  * --
+  27   
+  28  * ----- Output the results
+  29   
+  30  parameter Header Flag determining whether to output header records in outp
+      ut files ;
+  31  Header = 1 ;
+  32   
+  33  *----- Declare the output file names
+  34   
+  35  file reportfile / "Output/Panda.csv" / ;
+  36  file samfile   / "Output/samComp.csv" / ;
+  37  file samout    / "Output/samout.csv" / ;
+  38   
+  39  * ----- Model output options
+  40  display "Begin output listing" ;
+  41   
+  42  options limcol=000, limrow=000 ;
+  43  options solprint=off ;
+  44  option solvelink=2;
+  45   
+  46  put reportfile ;
+  47   
+  48  rscale = scale ;
+****       $140    $140
+STOP C:\Users\hero\Desktop\Github\test model - V17\report.gms
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/06/16 16:52:28 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Error Messages
+
+
+140  Unknown symbol
+
+**** 2 ERROR(S)   0 WARNING(S)
+GAMS 24.4.6  r52609 Released Jun 26, 2015 WEX-WEI x86 64bit/MS Windows 12/06/16 16:52:28 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\report.gms
+     2       49 STOP           1      49  C:\Users\hero\Desktop\Github\test mode
+                                          l - V17\report.gms
+
+
+COMPILATION TIME     =        0.000 SECONDS      2 MB  24.4.6 r52609 WEX-WEI
+
+
+USER: Yaqian Mu                                      G150107:0436AO-WIN
+      Tsinghua University, Res. Centre for International EnvironmDC6727
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\hero\Desktop\Github\test model - V17\report.gms
+Output     C:\Users\hero\Desktop\Github\test model - V17\report.lst
+
+**** USER ERROR(S) ENCOUNTERED
