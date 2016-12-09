@@ -13,9 +13,10 @@ $include trend
 $include core_1207
 
 *========static policy simulation========
-$include sim
+*$include sim
 
 *========dynamic policy simulation========
+$include dynamic_cal
 *$include dynamic
 *$include dynamic-calibration
 *$include dynamic-»ù×¼Çé¾°

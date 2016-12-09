@@ -1,6 +1,6 @@
 *----------------------------------------------*
 *Parameters with trend
-*0317 ¼ÓÈëGDPÇ÷ÊÆ£¬ÀÍ¶¯Á¦Ç÷ÊÆ
+*0317 ï¿½ï¿½ï¿½ï¿½GDPï¿½ï¿½ï¿½Æ£ï¿½ï¿½Í¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *----------------------------------------------*
 $CALL GDXXRW.EXE trend.xlsx par=PAT rng=A1:D18   par=RET1 rng=A26:I35   par=RET2 rng=A37:I46   par=sffelec_b rng=A47:I57  par=sffelec_BAU rng=A58:I68
 
@@ -29,10 +29,11 @@ Parameter lgrowth_b(t)      labor growth rate;
 Parameter aeei(*)        auto energy effiency index;
 
 rgdp_b(t)=PAT(t,"rgdp");
-rgdp0=rgdp_b("2010");
+rgdp0=rgdp_b("2012");
 
 gprod_b(t)=PAT(t,"gprod");
-gprod0=gprod_b("2010");
+*gprod0=gprod_b("2012");
+gprod0=1;
 lgrowth_b(t)=PAT(t,"lgrowth");
 
 aeei(i)=1;
@@ -54,12 +55,12 @@ sffelec1(sub_elec)=1;
 
 
 
-*²Î¿¼Çé¾°
+*ï¿½Î¿ï¿½ï¿½é¾°
 *ret_b(t,sub_elec)=RET2(t,sub_elec);
-*¸ß±ÈÀýÇé¾°
+*ï¿½ß±ï¿½ï¿½ï¿½ï¿½é¾°
 ret_b(t,sub_elec)=RET1(t,sub_elec);
 
-ret0(sub_elec)=ret_b("2010",sub_elec);
+ret0(sub_elec)=ret_b("2012",sub_elec);
 
 display aeei,PAT,rgdp0,ret0,ret_b;
 
@@ -67,4 +68,4 @@ display aeei,PAT,rgdp0,ret0,ret_b;
 
 parameter tlprop(t,lm)   share of each labor in total supply;
 
-tlprop("2010",lm) =tlabor_s0(lm)/tqlabor_s0;
+tlprop("2012",lm) =tlabor_s0(lm)/tqlabor_s0;

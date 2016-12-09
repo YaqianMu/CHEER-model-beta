@@ -302,7 +302,7 @@ $sysinclude mpsgeset China3E
 
 sff.l(x)$ffact0(x)  =1;
 t_re.l(sub_elec) = -subelec0(sub_elec)+taxelec0(sub_elec);
-t_re.lo(sub_elec)$ret0(sub_elec)=-inf;
+t_re.lo(sub_elec) =-inf;
 pu.fx=1;
 
 pelec.l(sub_elec)=(costelec0(sub_elec));
@@ -357,7 +357,7 @@ display China3E.modelstat, China3E.solvestat,ur.l,clim;
 *check2 =   (tlabor_q0(lm)/(1-ur0(lm))*ur.l(lm))-
 check2(lm) = (1-ur.l(lm))*tlabor_s0(lm)-    sum(j,qlin.l(j,lm))- sum(sub_elec, qlin_ele.l(sub_elec,lm));
 
-display check2;
+display check2, gprod.l;
 
 
 $ontext

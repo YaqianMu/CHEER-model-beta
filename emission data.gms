@@ -145,7 +145,7 @@ clim_a        selected sectors carbon emission allowance
 
 table climit(t,*)     input of emission cap
             a                    b
-2010        1                    1
+2012        1                    1
 2015        0.870031338        0.870031338
 2020        0.76262393        0.76262393
 2025        0.655022701        0.612717632

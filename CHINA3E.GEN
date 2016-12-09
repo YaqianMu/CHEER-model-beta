@@ -946,6 +946,6 @@ PUT / '$PEPS:1.E-6'/;
 PUT / '$SOLVE'/;
 PUTCLOSE   MPS;
 CHINA3E.INTEGER1 = CHINA3E.INTEGER1 + 1;
-$IF %CHINA3E%=="12/08/1615:21:00" $EXIT
+$IF %CHINA3E%=="12/09/1614:03:08" $EXIT
 $error model.gen file is inconsistent
 $abort preprocessor must be reinvoked

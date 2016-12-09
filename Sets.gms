@@ -84,9 +84,10 @@ capital "Physical capital"
 lab(f) labor /labor/
 d final demands /Household,GOVERNMENT,INVESTMENT,export,import/
 yr time in years /2005*2050/
-t(yr) time in 5 years periods
+t(yr) time in 5 years periods /2012,2015,2020,2025,2030/
+baseyear(yr) baseyear /2012/
 */2010*2030/
-/2010,2015,2020,2025,2030/
+
 *,2035,2040,2045,2050
 year years within each time period /1*5/
 ;
@@ -246,6 +247,3 @@ etemp(e)    =(output0(e)-(nx0(e)+xinv0(e)+xcons0(e)));
 parameter a0;
 a0(i)     =output0(i)-ximp0(i);
 display a0,output0,imp0,ximp0,nx0,inv0,cons0,xinv0,xcons0;
-
-
-
